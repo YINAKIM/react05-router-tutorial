@@ -45,3 +45,38 @@
 - 리액트라이브러리 사용할 때는 a태그 사용하면 모든 컴포넌트와 상태값을 전부 날리고 새로 렌더링하므로, Link컴포넌트를 사용한다.
 `<Link to="/about">소개로 Link</Link>`
 
+---
+
+#### URL파라미터 vs URL쿼리
+- URL파라미터 : 특정ID 또는 이름 등을 조회목적으로 사용
+- URL쿼리 : 키워드 검색등 페이지에 필요한 옵션을 전달
+
+## URL파라미터 사용하기 : match객체의 params값 참조
+- 라우트로 사용되는 Route컴포넌트에서 받아오는 match객체의 param값을 참조한다.
+```
+const Profile = ({match}) => {
+    const {username} = match.params;
+    ...생략...
+};
+```
+- 라우트컴포넌트에서 path규칙에 :을 앞에 붙여 사용한다.
+```
+    <Route path="/profile/:username" component={Profile} />
+```
+- match객체 : path, url, isExact, params 속성들이 들어있고, 그 중 params의 값을 참조한다.
+```
+ { 
+    path:"/profile/:username"
+    ,url:"/profile/gildong"
+    ,isExact:true
+    ,params:{"username":"gildong"}
+ }
+```
+
+## URL쿼리 사용하기 : location객체의 search값 참조
+- location객체의 search속성은 "?detail=true"처럼 문자열로 되어있다.
+- search속성 값(string)을 object로 변환하여 사용한다. => qs라이브러리 이용하여 변황
+    > yarn add qs
+```
+
+```
