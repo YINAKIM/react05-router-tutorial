@@ -29,7 +29,19 @@
   `<Route path="주소규칙" component={보여줄컴포넌트}/>`
 - 주소규칙 일부가 겹칠 때 : Route컴포넌트의 exact props를 true로 설정한다
   `<Route path="주소규칙" component={보여줄컴포넌트} exact={true}/>`
+#### Route 하나에 여러개의 path설정하기 (리액트라우터 5버전 이후 가능)
+- 5버전 이전에서는 그냥 path props만 다른 Route컴포넌트를 새로하나 작성해서 사용했음 
+    ```
+    <Route path="/about" component={About} />
+    <Route path="/info" component={About} /> 
+    ```
+- path props를 배열로 넘기면 여러 경로에서 같은 컴포넌트를 보여줄 수 있다. (스프링에서 핸들러매핑을 배열처리하는 것처럼)
+    ```
+    <Route path={["/about","/info"]} component={About} />
+    ```
+
 
 ## Link 컴포넌트 사용하기
 - 리액트라이브러리 사용할 때는 a태그 사용하면 모든 컴포넌트와 상태값을 전부 날리고 새로 렌더링하므로, Link컴포넌트를 사용한다.
 `<Link to="/about">소개로 Link</Link>`
+
