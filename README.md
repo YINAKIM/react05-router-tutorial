@@ -90,4 +90,14 @@ const Profile = ({match}) => {
 - 숫자 데이터는 반드시 parseInt해서 사용할 것
 
 ## 서브라우트 
-- 라우트 내부에 또 라우트를 정의하는 것. 
+- 라우트 내부에 또 라우트를 정의하는 것.
+
+## 리액트 라우터 부가기능들 
+1. history : 라우트로 사용된 컴포넌트에 match, location과 함께 전달되는 props중 하나, 컴포넌트 내의 메서드에서 라우터API를 호출할 수 있다.
+2. withRouter함수 : HoC(High-Order Component). 라우트로 사용된 컴포넌트가 아니어도, match, location, history객에 접근할 수 있도록 한다.
+> export default withRouter(컴포넌트이름);    
+이렇게 컴포넌트를 내보내줄 때 withRouter함수로 감싸서 내보내서 사용
+3. Switch : 여러 Route를 감싸서, 그 중 일치하는 단 하나의 라우트만들 렌더링시킨다. 
+ ***모든 규칙과 일치하지않을 때 렌더링할 Not Found 페이지를 만들 수 있다.***
+4. NavLink : 현재경로와 Link에서 사용하는 경로가 일치하는 경우, 특정 스타일을 줄 수 있는 컴포넌트
+
