@@ -78,5 +78,16 @@ const Profile = ({match}) => {
 - search속성 값(string)을 object로 변환하여 사용한다. => qs라이브러리 이용하여 변황
     > yarn add qs
 ```
-
+ {
+    pathname: "/about",
+    search: "?detail=true",
+    hash: ""
+ }
 ```
+***qs.parse() 사용시 유의사항***
+- ignoreQueryPrefix:true 설정으로 쿼리스트링 문자열 맨 앞의 "?"를 생략하고 parsing한다
+- boolean값은 반드시 문자열 true인지 비교할 것
+- 숫자 데이터는 반드시 parseInt해서 사용할 것
+
+## 서브라우트 
+- 라우트 내부에 또 라우트를 정의하는 것. 

@@ -1,5 +1,5 @@
 const data = {
-    velport: {
+    velopert: {
         name:'김민준', description:'리액트를 좋아하는개발자'
     },
     gildong: {
