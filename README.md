@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+#### react-router로 SPA개발하기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## SPA?
+- Single Page Application
+- 애플리케이션을 브라우저에 불러와 실행시키고, 사용자와의 인터랙션 발생시 "필요한 부분만" 자바스크립트를 활용하여 업데이트한다.
+- 서버에서 사용자에게 제공하는 페이지는 하나, 해당페이지에서 로딩된 js와 현재 사용자의 브라우저 주소 상태에 따라 다양한 화면을 보여준다.
 
-## Available Scripts
+## 라우팅
+- 다른 주소에 다른 화면을 보여주는 것 
+- 리액트 라이브러리 자체에 내장된 기능은 없음
+- react-router / reach-router / Next.js 등의 리액트 라우팅 라이브러리를 이용한다. 
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 프로젝트 순서
+1. 프로젝트생성, react-router적용 
+    >yarn add react-router-dom
+2. 페이지만들기
+3. Route컴포넌트로 특정 주소에 컴포넌트 연결
+4. 라우트 이동하기
+5. URL파라미터와 쿼리 이해하기
+6. 서브 라우트
+7. 부가기능
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `yarn test`
+## Route 컴포넌트 사용하기
+- Route 컴포넌트로 특정 주소에 컴포넌트 연결하기   
+  `<Route path="주소규칙" component={보여줄컴포넌트}/>`
+- 주소규칙 일부가 겹칠 때 : Route컴포넌트의 exact props를 true로 설정한다
+  `<Route path="주소규칙" component={보여줄컴포넌트} exact={true}/>`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Link 컴포넌트 사용하기
+- 리액트라이브러리 사용할 때는 a태그 사용하면 모든 컴포넌트와 상태값을 전부 날리고 새로 렌더링하므로, Link컴포넌트를 사용한다.
+`<Link to="/about">소개로 Link</Link>`
